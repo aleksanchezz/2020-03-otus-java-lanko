@@ -1,0 +1,24 @@
+plugins {
+    id "java"
+    id "com.github.johnrengelman.shadow"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+shadowJar {
+    archiveBaseName.set("gradleHelloWorld")
+    archiveVersion.set(project.version as String)
+    archiveClassifier.set('')
+    manifest {
+        attributes 'Main-Class': 'ru.otus.HelloOtus'
+    }
+}
+
+dependencies {
+    implementation "com.google.guava:guava"
+}
+
+tasks.build.dependsOn tasks.shadowJar
