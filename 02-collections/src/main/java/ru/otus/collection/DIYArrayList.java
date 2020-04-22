@@ -7,7 +7,7 @@ public class DIYArrayList<T> implements List<T> {
 
     private Object[] repository;
     private static final int DEFAULT_CAPACITY = 10;
-    private int COUNT = 0;
+    private int count = 0;
 
     public DIYArrayList() {
         this.repository = new Object[DEFAULT_CAPACITY];
@@ -26,18 +26,17 @@ public class DIYArrayList<T> implements List<T> {
     }
 
     private void expandInternalRepository() {
-        int newCapacity = getNewCapacity();
-        repository = Arrays.copyOf(repository, newCapacity);
+        repository = Arrays.copyOf(repository, getNewCapacity());
     }
 
     @Override
     public int size() {
-        return COUNT;
+        return count;
     }
 
     @Override
     public boolean isEmpty() {
-        return COUNT == 0;
+        return count == 0;
     }
 
     /**
@@ -47,7 +46,7 @@ public class DIYArrayList<T> implements List<T> {
         if (o == null) {
             return -1;
         }
-        for (int i = 0; i < COUNT; i++)
+        for (int i = 0; i < count; i++)
             if (o.equals(repository[i])) {
                 return i;
             }
@@ -72,12 +71,12 @@ public class DIYArrayList<T> implements List<T> {
 
         @Override
         public boolean hasNext() {
-            return (pointer < COUNT);
+            return (pointer < count);
         }
 
         @Override
         public T next() {
-            if ((pointer >= COUNT) || (pointer >= repository.length)) {
+            if ((pointer >= count) || (pointer >= repository.length)) {
                 throw new NoSuchElementException();
             }
             T element = (T) repository[pointer];
@@ -93,8 +92,8 @@ public class DIYArrayList<T> implements List<T> {
 
     @Override
     public Object[] toArray() {
-        Object[] array = new Object[COUNT];
-        for (int i = 0; i < COUNT; i++) {
+        Object[] array = new Object[count];
+        for (int i = 0; i < count; i++) {
             array[i] = repository[i];
         }
         return array;
@@ -107,11 +106,11 @@ public class DIYArrayList<T> implements List<T> {
 
     @Override
     public boolean add(T t) {
-        if (COUNT == repository.length) {
+        if (count == repository.length) {
             expandInternalRepository();
         }
-        repository[COUNT] = t;
-        COUNT += 1;
+        repository[count] = t;
+        count += 1;
         return true;
     }
 
@@ -151,7 +150,7 @@ public class DIYArrayList<T> implements List<T> {
     }
 
     private void checkIndex(int i) {
-        if ((i < 0) || (i >= COUNT)) {
+        if ((i < 0) || (i >= count)) {
             throw new IndexOutOfBoundsException();
         }
     }
@@ -219,7 +218,7 @@ public class DIYArrayList<T> implements List<T> {
 
         @Override
         public T next() {
-            if ((pointer >= COUNT) || (pointer >= repository.length)) {
+            if ((pointer >= count) || (pointer >= repository.length)) {
                 throw new NoSuchElementException();
             }
             T element = (T) repository[pointer];
@@ -281,7 +280,7 @@ public class DIYArrayList<T> implements List<T> {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("[");
-        for (int i = 0; i < COUNT; i++) {
+        for (int i = 0; i < count; i++) {
             builder
                     .append(repository[i])
                     .append(", ");
