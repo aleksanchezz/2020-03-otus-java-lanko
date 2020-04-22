@@ -24,6 +24,12 @@ allprojects {
     dependencyManagement {
         dependencies {
             dependency("com.google.guava:guava:${Versions.GUAVA_VERSION}")
+            dependency("org.junit.jupiter:junit-jupiter-engine:${Versions.JUNIT_VERSION}")
+            dependency("org.junit.jupiter:junit-jupiter-params:${Versions.JUNIT_VERSION}")
+            dependency("org.assertj:assertj-core:${Versions.ASSERTJ_VERSION}")
+            dependency("org.mockito:mockito-all:${Versions.MOCKITO_VERSION}")
+            dependency("org.openjdk.jmh:jmh-core:${Versions.JMH_VERSION}")
+            dependency("org.openjdk.jmh:jmh-generator-annprocess:${Versions.JMH_VERSION}")
         }
     }
 }
