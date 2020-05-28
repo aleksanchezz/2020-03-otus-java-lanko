@@ -2,3 +2,4 @@ rootProject.name = "2020-03-otus-java-lanko"
 include '01-gradle'
 include '02-collections'
 include '03-annotations'
+include '06-atm'
