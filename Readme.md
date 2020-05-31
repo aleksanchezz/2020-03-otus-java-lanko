@@ -15,4 +15,4 @@ Gradle: 6.3 (wrapper)
 |     2    |   Коллекции   | ./02-collections         |     20.04.20     |
 |     3    |   Аннотации   | ./03-annotations         |     11.05.20     |
 |     6    | ATM - часть 1 | ./06-atm                 |     23.05.20     |
-
+|     7    | ATM - часть 2 | ./07-atm-department      |     31.05.20     |
