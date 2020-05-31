@@ -4,4 +4,5 @@ public interface Versions {
     String ASSERTJ_VERSION = "3.15.0";
     String MOCKITO_VERSION = "1.10.5";
     String JMH_VERSION = "1.23";
+    String GSON_VERSION = "2.7";
 }

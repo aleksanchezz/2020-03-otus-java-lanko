@@ -30,6 +30,7 @@ allprojects {
             dependency("org.mockito:mockito-all:${Versions.MOCKITO_VERSION}")
             dependency("org.openjdk.jmh:jmh-core:${Versions.JMH_VERSION}")
             dependency("org.openjdk.jmh:jmh-generator-annprocess:${Versions.JMH_VERSION}")
+            dependency("com.google.code.gson:gson:${Versions.GSON_VERSION}")
         }
     }
 }
